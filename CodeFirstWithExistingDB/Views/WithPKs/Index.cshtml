@@ -1,0 +1,53 @@
+﻿@model IEnumerable<CodeFirstWithExistingDB.Models.WithPK>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+    <tr>
+        <th nowrap>
+            @Html.DisplayNameFor(model => model.Id)
+        </th>
+        <th nowrap>
+            @Html.DisplayNameFor(model => model.WithName)
+        </th>
+        <th nowrap>
+            Edit
+        </th>
+        <th nowrap>
+            Details
+        </th>
+        <th nowrap>
+            Delete
+        </th>
+    </tr>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(model => item.Id)
+    </td>
+    <td>
+        @Html.DisplayFor(model => item.WithName)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.Id })
+    </td>
+    <td>
+        @Html.ActionLink("Details", "Details", new { id = item.Id })
+    </td>
+    <td>
+        @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+    </td>
+</tr>
+}
+
+</table>

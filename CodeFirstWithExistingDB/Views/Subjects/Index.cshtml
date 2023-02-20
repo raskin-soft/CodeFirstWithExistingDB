@@ -1,0 +1,51 @@
+﻿@model IEnumerable<CodeFirstWithExistingDB.Models.Subject>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th nowrap>
+            @Html.DisplayNameFor(model => model.SubID)
+        </th>
+        <th nowrap>
+            @Html.DisplayNameFor(model => model.SubName)
+        </th>
+        <th nowrap>
+            Edit
+        </th>
+        <th nowrap>
+            Details
+        </th>
+        <th nowrap>
+            Delete
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(model => item.SubID)
+    </td>
+    <td>
+        @Html.DisplayFor(model => item.SubName)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.SubID })
+    </td>
+    <td>
+        @Html.ActionLink("Details", "Details", new { id = item.SubID })
+    </td>
+    <td>
+        @Html.ActionLink("Delete", "Delete", new { id = item.SubID })
+    </td>
+</tr>
+}
+
+</table>
